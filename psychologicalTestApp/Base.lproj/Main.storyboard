@@ -1,24 +1,442 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wuL-uM-UrR">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Psychological Test View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="psychologicalTestViewController" customModule="psychologicalTestApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Hot Air Balloon Ride" translatesAutoresizingMaskIntoConstraints="NO" id="97v-me-v67">
+                                <rect key="frame" x="0.0" y="0.0" width="551" height="844"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJG-L4-IA5">
+                                <rect key="frame" x="16" y="337" width="358" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.66666668653488159" green="0.42325260044342539" blue="0.27997756300726839" alpha="0.41676623615997516" colorSpace="custom" customColorSpace="displayP3"/>
+                                <string key="text">英國神準心理測驗！
+選擇題完成一段故事，精準解析人格特質、戀愛觀、現處難題</string>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j77-du-gTl">
+                                <rect key="frame" x="87" y="670" width="217" height="68"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.89342710299999994" green="0.35387460156962186" blue="0.16877392618307535" alpha="0.98811350437189571" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="開始測驗" cornerStyle="capsule">
+                                    <backgroundConfiguration key="background" strokeWidth="4">
+                                        <color key="backgroundColor" red="1" green="0.65072328005973135" blue="0.37307277576845443" alpha="0.68271177178187081" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="strokeColor" red="0.89342710299999994" green="0.46931269834120692" blue="0.078921421530864691" alpha="0.86157368034716475" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" name="Menlo-Bold" family="Menlo" pointSize="40"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="eJs-BY-3mx" kind="show" id="uwR-YN-gAj"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="fqG-db-Bt2"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="949.23076923076917" y="81.753554502369667"/>
+        </scene>
+        <!--Loading View Controller-->
+        <scene sceneID="jBg-6u-fNp">
+            <objects>
+                <viewController id="eJs-BY-3mx" customClass="loadingViewController" customModule="psychologicalTestApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="M8z-Yp-nSC">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Sammamish River Plein Air, Mike McCain" translatesAutoresizingMaskIntoConstraints="NO" id="sfg-wi-27F">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bzk-Tu-pxc">
+                                <rect key="frame" x="0.0" y="88" width="390" height="722"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xdf-1q-V0S">
+                                        <rect key="frame" x="-4" y="24" width="394" height="617"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6G-Bt-1YI">
+                                                <rect key="frame" x="18" y="8" width="358" height="148"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <string key="text">想進一步認識自己或身旁人的真實個性，心理測驗往往都是不錯得選擇，且時常可以一語點破當下的迷惘與困境。這回編輯就為大家帶來一款英國說故事心理測驗，透過情境下的直觀選擇，來解析你的人格特質、戀愛觀與現處難題。一起測驗看看準不準吧！
+</string>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YVy-PK-wDt">
+                                                <rect key="frame" x="56" y="455" width="282" height="60"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="繼續" cornerStyle="capsule">
+                                                    <backgroundConfiguration key="background" strokeWidth="3">
+                                                        <color key="backgroundColor" red="0.89341251039324521" green="0.96071185487689392" blue="0.7607726499100772" alpha="0.91034622693983847" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="strokeColor" red="0.44652968518231356" green="0.57272317714147514" blue="0.60647445284959045" alpha="0.47801602597268211" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </backgroundConfiguration>
+                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="23"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="6QP-zt-afJ" kind="show" id="Cbt-Wn-Fs9"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHJ-PP-fZP">
+                                                <rect key="frame" x="18" y="164" width="358" height="222"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.53821629404232207" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <string key="text">故事背景：
+
+你身處河岸邊上，想要渡河到對岸。這時河上駛來了一艘船，船上只有漁夫一人。
+</string>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="0.34353203170000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.46562336300000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="sM9-b3-VD4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="H4A-85-2eq"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JRx-Kw-Gpj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1693.8461538461538" y="81.753554502369667"/>
+        </scene>
+        <!--Choose View Controller-->
+        <scene sceneID="2wO-90-wSk">
+            <objects>
+                <viewController id="6QP-zt-afJ" customClass="chooseViewController" customModule="psychologicalTestApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="s1V-K2-Xar">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image=" -2" translatesAutoresizingMaskIntoConstraints="NO" id="Vl6-zY-cCx">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="375-g8-Zg3">
+                                <rect key="frame" x="0.0" y="88" width="390" height="722"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="axT-bR-hxb">
+                                        <rect key="frame" x="54" y="290" width="282" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="0" cornerStyle="capsule">
+                                            <backgroundConfiguration key="background" strokeWidth="3">
+                                                <color key="backgroundColor" white="1" alpha="0.34668079906741517" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="strokeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="23"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="chooseAnswer:" destination="6QP-zt-afJ" eventType="touchUpInside" id="2NH-Jq-8GV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Num-pv-ffL">
+                                        <rect key="frame" x="54" y="370" width="282" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="1" cornerStyle="capsule">
+                                            <backgroundConfiguration key="background" strokeWidth="3">
+                                                <color key="backgroundColor" white="1" alpha="0.34999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="strokeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="23"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="chooseAnswer:" destination="6QP-zt-afJ" eventType="touchUpInside" id="JHF-B5-P6e"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mjl-P8-qBD">
+                                        <rect key="frame" x="54" y="450" width="282" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="2" cornerStyle="capsule">
+                                            <backgroundConfiguration key="background" strokeWidth="3">
+                                                <color key="backgroundColor" white="1" alpha="0.34999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="strokeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="23"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="chooseAnswer:" destination="6QP-zt-afJ" eventType="touchUpInside" id="DvC-6F-rNZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nR-gn-b0q">
+                                        <rect key="frame" x="54" y="530" width="282" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="3" cornerStyle="capsule">
+                                            <backgroundConfiguration key="background" strokeWidth="3">
+                                                <color key="backgroundColor" white="1" alpha="0.34999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="strokeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="23"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="chooseAnswer:" destination="6QP-zt-afJ" eventType="touchUpInside" id="peQ-JL-amY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZZ2-m3-ABn">
+                                        <rect key="frame" x="54" y="610" width="282" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="4" cornerStyle="capsule">
+                                            <backgroundConfiguration key="background" strokeWidth="3">
+                                                <color key="backgroundColor" white="1" alpha="0.34999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="strokeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="23"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="chooseAnswer:" destination="6QP-zt-afJ" eventType="touchUpInside" id="ARs-8H-zgp"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="衣服" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5He-eD-BaQ">
+                                        <rect key="frame" x="54" y="290" width="282" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="鞋子" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKi-yC-jGL">
+                                        <rect key="frame" x="54" y="370" width="282" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="帽子" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rn9-dY-aGI">
+                                        <rect key="frame" x="54" y="450" width="282" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1e8-61-yZR">
+                                        <rect key="frame" x="52" y="530" width="282" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tJv-7L-Dbt">
+                                        <rect key="frame" x="52" y="610" width="282" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ag3-PU-0lI">
+                                        <rect key="frame" x="-4" y="24" width="394" height="238"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Q1 : 船夫說：「你可以坐上我的船，但要以身上的一樣物品交換。」那樣物品會是什麼呢？" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p6U-EE-7zu">
+                                                <rect key="frame" x="18" y="0.0" width="358" height="238"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="0.34353203173504759" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.46562336296435225" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vek-mg-qKf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="iq7-lS-vXs"/>
+                    <connections>
+                        <outlet property="questionLabel" destination="p6U-EE-7zu" id="XwP-sf-SaQ"/>
+                        <outlet property="storyImage" destination="Vl6-zY-cCx" id="bAo-Cd-FJw"/>
+                        <outletCollection property="chooseButton" destination="axT-bR-hxb" collectionClass="NSMutableArray" id="Soo-Hn-gp3"/>
+                        <outletCollection property="chooseButton" destination="Num-pv-ffL" collectionClass="NSMutableArray" id="J8W-6J-r6u"/>
+                        <outletCollection property="chooseButton" destination="Mjl-P8-qBD" collectionClass="NSMutableArray" id="xdJ-iM-Vv9"/>
+                        <outletCollection property="chooseButton" destination="1nR-gn-b0q" collectionClass="NSMutableArray" id="fUl-Ha-RjM"/>
+                        <outletCollection property="chooseButton" destination="ZZ2-m3-ABn" collectionClass="NSMutableArray" id="ZH7-af-e5U"/>
+                        <outletCollection property="chooseLabel" destination="5He-eD-BaQ" collectionClass="NSMutableArray" id="jE9-zT-fhq"/>
+                        <outletCollection property="chooseLabel" destination="PKi-yC-jGL" collectionClass="NSMutableArray" id="Rda-3n-Xrt"/>
+                        <outletCollection property="chooseLabel" destination="rn9-dY-aGI" collectionClass="NSMutableArray" id="nkJ-yK-Yk8"/>
+                        <outletCollection property="chooseLabel" destination="1e8-61-yZR" collectionClass="NSMutableArray" id="ZU6-eo-ci0"/>
+                        <outletCollection property="chooseLabel" destination="tJv-7L-Dbt" collectionClass="NSMutableArray" id="d7q-HE-6Zc"/>
+                        <segue destination="LdW-vo-DHJ" kind="show" identifier="showResult" destinationCreationSelector="showResult:" id="DUG-il-ZvZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8ej-sA-B8f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2423.0769230769229" y="81.753554502369667"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="mlP-u5-IES">
+            <objects>
+                <viewController id="LdW-vo-DHJ" customClass="resultViewController" customModule="psychologicalTestApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uSE-4b-XNI">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="'Hot Air Balloon and Clouds' Poster by Brooke T Ryan | Displate" translatesAutoresizingMaskIntoConstraints="NO" id="FTe-Sx-L2z">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ozL-jO-ufC">
+                                <rect key="frame" x="0.0" y="88" width="390" height="722"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Q1 : 船夫說：「你可以坐上我的船，但要以身上的一樣物品交換。」那樣物品會是什麼呢？" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PM2-m6-tuk">
+                                        <rect key="frame" x="16" y="0.0" width="358" height="101"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="測你最害怕因為結婚失去什麼？" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwG-xG-apE">
+                                        <rect key="frame" x="8" y="109" width="374" height="102"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.9967991222034801" green="0.9967991222034801" blue="0.9967991222034801" alpha="0.47810050509623342" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A / 衣服：你認為自由最可貴，所以最害怕因為婚姻失去自由。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RmG-HM-fTJ">
+                                        <rect key="frame" x="16" y="219" width="358" height="77"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="B / 鞋子：你認爲物質最重要，害怕婚後無法自由支配金錢。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0O2-hm-OgG">
+                                        <rect key="frame" x="16" y="304" width="358" height="77"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="C / 帽子：你害怕每天只能圍繞在柴米油鹽上打轉，害怕失去隨意支配的時間，最終變成一個平凡的黃臉婆。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9T-xt-LDx">
+                                        <rect key="frame" x="16" y="389" width="358" height="77"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A / 衣服：你認為自由最可貴，所以最害怕因為婚姻失去自由。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SpJ-iU-AfQ">
+                                        <rect key="frame" x="16" y="474" width="358" height="77"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A / 衣服：你認為自由最可貴，所以最害怕因為婚姻失去自由。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdz-be-YXh">
+                                        <rect key="frame" x="16" y="559" width="358" height="77"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mn5-yG-S4o">
+                                        <rect key="frame" x="225" y="659" width="125" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="gray" title="下一題"/>
+                                        <connections>
+                                            <action selector="next:" destination="LdW-vo-DHJ" eventType="touchUpInside" id="gtW-Dh-4yO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="unq-qP-PYc">
+                                        <rect key="frame" x="40" y="658" width="125" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="gray" title="上一題"/>
+                                        <connections>
+                                            <action selector="Previous:" destination="LdW-vo-DHJ" eventType="touchUpInside" id="e8n-sO-xAt"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qTw-H6-mBz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zT0-pl-An0"/>
+                    <connections>
+                        <outlet property="Previous" destination="unq-qP-PYc" id="S1e-zC-Oiv"/>
+                        <outlet property="questionLabel1" destination="PM2-m6-tuk" id="fXB-pW-nza"/>
+                        <outlet property="questionLabel2" destination="kwG-xG-apE" id="PPa-rN-QSi"/>
+                        <outletCollection property="resultLabel" destination="RmG-HM-fTJ" collectionClass="NSMutableArray" id="EO9-Xv-NJv"/>
+                        <outletCollection property="resultLabel" destination="0O2-hm-OgG" collectionClass="NSMutableArray" id="99k-8D-mTz"/>
+                        <outletCollection property="resultLabel" destination="t9T-xt-LDx" collectionClass="NSMutableArray" id="Tho-ls-Hyp"/>
+                        <outletCollection property="resultLabel" destination="SpJ-iU-AfQ" collectionClass="NSMutableArray" id="e7W-dd-d0i"/>
+                        <outletCollection property="resultLabel" destination="fdz-be-YXh" collectionClass="NSMutableArray" id="L8x-Yx-pZp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BR3-DG-mci" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3176.9230769230767" y="81.753554502369667"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6xf-tq-jKL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wuL-uM-UrR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6Sk-mj-l3G">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ESA-2P-sIX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dc0-jV-oeI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20" y="81.753554502369667"/>
         </scene>
     </scenes>
+    <resources>
+        <image name=" -2" width="750" height="1333"/>
+        <image name="'Hot Air Balloon and Clouds' Poster by Brooke T Ryan | Displate" width="280" height="392"/>
+        <image name="Hot Air Balloon Ride" width="1200" height="1200"/>
+        <image name="Sammamish River Plein Air, Mike McCain" width="1920" height="2747"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
